@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Introduction Javascript</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+  </head>
+
+  <body>
+      <h1>Javascript</h1>
+      <img src="an.jpg" height="300px" alt="">
+      <div id="lfc">
+        
+      </div>
+      <div id="champ"></div>
+      <div id="best"></div>
+      <div id="major"></div>
+      <div id="player"></div>
+      <div id="striker"></div>
+      <div id="midfield"></div>
+      <div id="bek"></div>
+      <div id="banding"></div>
+      <div id="switch"></div>
+      <p class="tulisan">LFC</p>
+      <p class="tulisan">LIVERPOOL</p>
+      <p class="tulisan">JUARA</p>
+      <input type="dropdown">
+      <script>
+          function info_lfc(ucl, epl){
+       
+            var nomor = Math.random(2) * 100
+            var no = Math.floor(Math.random()*20)+1
+            document.getElementById("lfc").innerHTML = "Liverpool F.C" + " " + epl + " " +"gelar Liga";
+            document.getElementById("champ").innerHTML = "Peluang Liverpool F.C juara adalah "+nomor+" %";
+            document.getElementById("best").innerHTML = "Pemain terbaik Liverpool F.C adalah nomor "+ no;
+          }
+
+          info_lfc(6, 20)
+
+          function gelar(ucl, epl){
+              return(ucl + epl)
+          }
+          document.getElementById("major").innerHTML = "gelar major Liverpool F.C berjumlah "+ gelar(6,19);
+
+          var striker =["Mane", "Salah", "Firmino"];
+          var midfield = ["Henderson", "Thiago", "Fabinho"];
+          var bek = ["Trent", "Robbo", "Virgil"];
+
+          var total = striker.concat(midfield, bek);
+
+          document.getElementById("player").innerHTML = "Daftar pemain Liverpool diantaranya "+ total.join(" | ")
+
+          /* splice, pop, push, (shift, unshift sama kaya pop push bedanya diawal) */
+
+          striker.splice(3, 0, "Jota")
+          midfield.pop()
+          bek.push("Konate")
+          document.getElementById("striker").innerHTML = "Daftar striker Liverpool diantaranya "+ striker
+          document.getElementById("midfield").innerHTML = "Daftar midfield Liverpool orang Eropa diantaranya "+ midfield
+          document.getElementById("bek").innerHTML = "Bek Liverpool termasuk yang baru "+ bek
+          
+          var emyu = 20
+          if (gelar(6, 19) > emyu){
+            document.getElementById("banding").innerHTML = "Liverpool tim terbaik Inggris"
+
+          }
+
+          /*c  var tes = "Mane";
+
+          switch( tes ){
+            case "Mane":
+              document.getElementById("switch").innerHTML = " Dia Mane "
+              break;
+            
+            default:
+              document.getElementById("switch").innerHTML = " Dia bukan Mane "
+
+          }
+
+          /* for loop 
+          for (titik mulai; batas akhir; delta)*/
+
+          //for (var i =0; i<10; i++){
+            //alert(i)
+
+          
+
+          var loop = "";
+          var i = 10;
+         /* while ( i < 5 ){
+            loop += "<br>"+i;
+            i++;
+        
+          }
+          document.getElementById("switch").innerHTML = loop;
+
+          /* do while sama seperti while, hanya saja perintah dijalankan di awal tanpa mempedulikan syarat while */
+
+          do{
+            loop += "<br>"+i;
+            i++;
+          }
+          while ( i < 5 )
+          document.getElementById("switch").innerHTML = loop;
+
+          document.getElementsByClassName("tulisan")[2].innerHTML="ANDA"
+
+
+
+
+  
+          
+      </script>
+  </body>
+</html>
